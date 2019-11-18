@@ -11,9 +11,9 @@ const SignUp = ({ isSubmitting }) => {
       <ErrorMessage name='email' component='p' />
       <Field type='username' name='username' />
       <ErrorMessage name='username' component='p' />
-      <Field type='password' name='passwordConfirm' />
-      <ErrorMessage name='passwordConfirm' component='p' />
       <Field type='password' name='password' />
+      <ErrorMessage name='password' component='p' />
+      <Field type='password' name='passwordConfirm' />
       <ErrorMessage name='passwordConfirm' component='p' />
       <button type='submit' disabled={isSubmitting}>
         Submit
