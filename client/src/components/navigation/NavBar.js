@@ -6,9 +6,9 @@ import FormikLogin from '../login/FormikLogin'
 const NavBar = () => (
   <nav>
     <Link to='/'>Sign Up</Link>
-    <Link to='/signin'>Sign In</Link>
+    <Link to='/login'>Login</Link>
     <Route exact path='/' component={FormikSignUp} />
-    <Route path='/signin' component={FormikLogin} />
+    <Route path='/login' component={FormikLogin} />
   </nav>
 )
 

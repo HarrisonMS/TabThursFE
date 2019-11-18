@@ -15,11 +15,11 @@ const FormikLogin = withFormik({
       .min(8, 'must be at least 8 characters')
       .required(`can't be empty`),
   }),
-  handleSubmit: (values, { setSubmitting }) => {
-    setSubmitting(true)
+  handleSubmit: (values, { setSubmitting, resetForm }) => {
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2))
       setSubmitting(false)
+      resetForm()
     }, 1000)
   },
   displayName: 'Sign In',

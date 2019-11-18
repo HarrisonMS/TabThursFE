@@ -1,7 +1,9 @@
 import React from 'react'
 import { Form, Field, ErrorMessage } from 'formik'
 
-const SignUp = ({ isSubmitting }) => (
+const SignUp = ({ isSubmitting }) => {
+  console.log(isSubmitting)
+  return (
   <>
     <h1>SignUp</h1>
     <Form>
@@ -18,6 +20,6 @@ const SignUp = ({ isSubmitting }) => (
       </button>
     </Form>
   </>
-)
+)}
 
 export default SignUp
