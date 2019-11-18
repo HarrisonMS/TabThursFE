@@ -1,6 +1,7 @@
 import { withFormik } from 'formik'
 import * as Yup from 'yup'
 import SignUp from './SignUp'
+import signUpPost from '../apis/signUpPost'
 
 const FormikSignUp = withFormik({
   mapPropsToValues: () => ({
@@ -23,11 +24,9 @@ const FormikSignUp = withFormik({
       .oneOf([Yup.ref('password'), null], 'Passwords must match! Please try again.')
   }),
   handleSubmit: (values, { setSubmitting, resetForm }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2))
-      setSubmitting(false)
-      resetForm()
-    }, 1000)
+    signUpPost(values)
+    setSubmitting(false)
+    resetForm()
   },
   displayName: 'Sign Up',
 })(SignUp)

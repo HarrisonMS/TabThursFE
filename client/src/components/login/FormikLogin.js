@@ -1,6 +1,7 @@
 import { withFormik } from 'formik'
 import * as Yup from 'yup'
 import Login from './Login'
+import loginPost from '../apis/loginPost'
 
 const FormikLogin = withFormik({
   mapPropsToValues: () => ({
@@ -16,11 +17,9 @@ const FormikLogin = withFormik({
       .required(`Password is required!`),
   }),
   handleSubmit: (values, { setSubmitting, resetForm }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2))
-      setSubmitting(false)
-      resetForm()
-    }, 1000)
+    loginPost(values)
+    setSubmitting(false)
+    resetForm()
   },
   displayName: 'Sign In',
 })(Login)
