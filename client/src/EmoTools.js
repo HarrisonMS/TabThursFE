@@ -133,7 +133,8 @@ export const EmoField = styled(Field)`
   border: lightslategrey 1px solid;
 `
 export const Button = styled.button`
-  width: 50%;
+  width: 40%;
+  height: 40px;
   color: white;
   background-color: mediumslateblue;
   border-radius: 15px;
