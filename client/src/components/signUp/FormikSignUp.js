@@ -1,13 +1,18 @@
 import { withFormik } from 'formik'
 import * as Yup from 'yup'
-import Login from './Login'
+import SignUp from './SignUp'
 
-const FormikLogin = withFormik({
+const FormikSignUp = withFormik({
   mapPropsToValues: () => ({
+    email: '',
     username: '',
     password: '',
+    passwordConfirm: '',
   }),
   validationSchema: Yup.object().shape({
+    email: Yup.string()
+      .email(`must be formated correctly: example@domain.com`)
+      .required(' is a required field!'),
     username: Yup.string()
       .min(5, 'minimum 5 characters')
       .required(`can't be empty`),
@@ -22,7 +27,7 @@ const FormikLogin = withFormik({
       setSubmitting(false)
     }, 1000)
   },
-  displayName: 'Sign In',
-})(Login)
+  displayName: 'Sign Up',
+})(SignUp)
 
-export default FormikLogin
+export default FormikSignUp
