@@ -10,10 +10,10 @@ const FormikLogin = withFormik({
   validationSchema: Yup.object().shape({
     username: Yup.string()
       .min(5, 'minimum 5 characters')
-      .required(`can't be empty`),
+      .required(`Username is required!`),
     password: Yup.string()
       .min(8, 'must be at least 8 characters')
-      .required(`can't be empty`),
+      .required(`Password is required!`),
   }),
   handleSubmit: (values, { setSubmitting, resetForm }) => {
     setTimeout(() => {

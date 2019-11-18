@@ -1,25 +1,38 @@
 import React from 'react'
-import { Form, Field, ErrorMessage } from 'formik'
+import { Form, ErrorMessage } from 'formik'
+import { FlexContainer, H1, P, Button } from '../../EmoTools'
+import { EmoField } from '../../EmoTools'
 
-const SignUp = ({ isSubmitting }) => {
+const SignUp = ({ isSubmitting, errors, touched }) => {
   console.log(isSubmitting)
   return (
-  <>
-    <h1>Sign Up</h1>
-    <Form>
-      <Field type='email' name='email' />
-      <ErrorMessage name='email' component='p' />
-      <Field type='username' name='username' />
-      <ErrorMessage name='username' component='p' />
-      <Field type='password' name='password' />
-      <ErrorMessage name='password' component='p' />
-      <Field type='password' name='passwordConfirm' />
-      <ErrorMessage name='passwordConfirm' component='p' />
-      <button type='submit' disabled={isSubmitting}>
-        Submit
-      </button>
-    </Form>
-  </>
-)}
+    <FlexContainer fdc aic acc mainColor margin='20px 0'>
+      <H1>Sign Up</H1>
+      <Form>
+        <FlexContainer margin='50px 0 0' fdc aic mainColor>
+          {(touched.email && errors.email && <ErrorMessage name='email' component={P} />) || (
+            <P>Enter Email</P>
+          )}
+          <EmoField type='email' name='email' />
+          {(touched.username && errors.username && <ErrorMessage name='username' component={P} />) || (
+            <P>Enter Username</P>
+          )}
+          <EmoField type='username' name='username' />
+          {(touched.password && errors.password && <ErrorMessage name='password' component={P} />) || (
+            <P>Enter Password</P>
+          )}
+          <EmoField type='password' name='password' />
+          {(touched.passwordConfirm && errors.passwordConfirm && <ErrorMessage name='passwordConfirm' component={P} />) || (
+            <P>Confirm Password</P>
+          )}
+          <EmoField type='password' name='passwordConfirm' />
+          <Button type='submit' disabled={isSubmitting}>
+            Submit
+          </Button>
+        </FlexContainer>
+      </Form>
+    </FlexContainer>
+  )
+}
 
 export default SignUp
