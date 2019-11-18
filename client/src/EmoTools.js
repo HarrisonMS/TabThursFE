@@ -140,4 +140,7 @@ export const Button = styled.button`
   border-radius: 15px;
   font-size: ${styleVariables.fontSizeSmall};
   border: none;
+  &:hover {
+    background-color: darkslateblue;
+  }
 `

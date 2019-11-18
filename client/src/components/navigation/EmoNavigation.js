@@ -8,7 +8,6 @@ export const EmoNavLink = styled(NavLink)`
   margin: 20px 10px;
   font-size: ${styleVariables.fontSizeP};
   font-family: ${styleVariables.secondaryFontFamily};
-  font-weight: normal;
   &:hover {
     color: lightslategrey;
   }
