@@ -5,7 +5,7 @@ const SignUp = ({ isSubmitting }) => {
   console.log(isSubmitting)
   return (
   <>
-    <h1>SignUp</h1>
+    <h1>Sign Up</h1>
     <Form>
       <Field type='email' name='email' />
       <ErrorMessage name='email' component='p' />
