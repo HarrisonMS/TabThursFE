@@ -1,6 +1,7 @@
 import { withFormik } from 'formik'
 import * as Yup from 'yup'
 import Login from './Login'
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 const FormikLogin = withFormik({
   mapPropsToValues: () => ({
@@ -16,11 +17,18 @@ const FormikLogin = withFormik({
       .required(`can't be empty`),
   }),
   handleSubmit: (values, { setSubmitting, resetForm }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2))
-      setSubmitting(false)
-      resetForm()
-    }, 1000)
+    axiosWithAuth()
+			.post('/auth/login', values)
+			.then((res) => {
+        console.log(res)
+				// localStorage.setItem('token', res.values.payload);
+			})
+			.catch((err) => console.log(err));
+    // setTimeout(() => {
+    //   alert(JSON.stringify(values, null, 2))
+    //   setSubmitting(false)
+    //   resetForm()
+    // }, 1000)
   },
   displayName: 'Sign In',
 })(Login)
