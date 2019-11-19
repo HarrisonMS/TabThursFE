@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import NavBar from './components/navigation/NavBar'
 import EmoGlobal from './EmoGlobal'
 import { UserTabsContext } from './UserTabsContext'
