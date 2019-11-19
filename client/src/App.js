@@ -1,4 +1,4 @@
-import React, { useState }from 'react'
+import React, { useState } from 'react'
 import NavBar from './components/navigation/NavBar'
 import EmoGlobal from './EmoGlobal'
 import { UserTabsContext } from './UserTabsContext'
@@ -38,8 +38,8 @@ function App() {
   return (
     <>
       <EmoGlobal />
-    <UserTabsContext.Provider value={{userTabArray, setUserTabArray}}>
-      <NavBar />
+      <UserTabsContext.Provider value={{ userTabArray, setUserTabArray }}>
+        <NavBar />
       </UserTabsContext.Provider>
     </>
   )
