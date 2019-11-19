@@ -1,13 +1,21 @@
 import axios from 'axios'
 
-const loginPost = values => {
-  axios.post('https://reqres.in/api/users', values)
-  .then(res => {
-    console.log(res)
-  })
-  .catch(err => {
-    console.log(err)
+const axiosWithAuth = () => {
+  const token = localStorage.getItem('token')
+  return axios.create({
+    baseURL: 'https://tabless-be.herokuapp.com/api/',
+    headers: {
+      Authorization: token,
+    },
   })
 }
 
+const loginPost = values => {
+  axiosWithAuth()
+    .post('/auth/login', values)
+    .then(res => {
+      localStorage.setItem('token', res.data.token)
+    })
+    .catch(err => console.log(err))
+}
 export default loginPost

@@ -1,8 +1,4 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-import FormikSignUp from '../signUp/FormikSignUp'
-import FormikLogin from '../login/FormikLogin'
-import HomePage from '../homePage/HomePage'
 import { EmoNavLink } from './EmoNavigation'
 import { FlexContainer } from '../../EmoTools'
 
@@ -22,9 +18,6 @@ const NavBar = () => (
       Home
     </EmoNavLink>
     </FlexContainer>
-    <Route exact path='/' component={FormikSignUp} />
-    <Route path='/login' component={FormikLogin} />
-    <Route path='/home' component={HomePage} />
   </nav>
 )
 
