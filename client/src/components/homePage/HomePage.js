@@ -10,15 +10,10 @@ const HomePage = () => {
     <>
       <H1>All Saved Tabs</H1>
       {sortedTabs(userTabArray).map((tabObject, i) => (
-        <FlexContainer 
-        key={i}
-        mainColor
-        fdc
-        aic
-        acc
-        margin='20px'
-        >
-          <Link to={`/home/${tabObject.catName}`}><H3>{tabObject.catName}</H3></Link>
+        <FlexContainer key={i} mainColor fdc aic acc margin='20px'>
+          <Link to={`/home/${tabObject.catName}`}>
+            <H3>{tabObject.catName}</H3>
+          </Link>
           {tabObject.tabName.map((tab, i) => (
             <P key={i}>{tab}</P>
           ))}

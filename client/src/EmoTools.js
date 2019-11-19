@@ -3,8 +3,6 @@ import WebFont from 'webfontloader'
 import styledMap from 'styled-map'
 import { Field } from 'formik'
 
-
-
 WebFont.load({
   google: {
     families: ['Oxygen', 'Varela Round', 'sans-serif'],

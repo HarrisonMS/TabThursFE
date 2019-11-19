@@ -1,5 +1,4 @@
-import axiosWithAuth from "../utils/axiosWithAuth"
-
+import axiosWithAuth from '../utils/axiosWithAuth'
 
 const loginPost = (values, redirect) => {
   axiosWithAuth()

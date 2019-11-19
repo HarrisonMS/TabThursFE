@@ -17,7 +17,7 @@ const FormikLogin = withFormik({
       .required(`Password is required!`),
   }),
   handleSubmit: (values, { props, setSubmitting, resetForm }) => {
-    loginPost(values,  () => props.history.push('/home'))
+    loginPost(values, () => props.history.push('/home'))
     setSubmitting(false)
     resetForm()
   },
