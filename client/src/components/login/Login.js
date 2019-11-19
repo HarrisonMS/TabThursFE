@@ -1,19 +1,27 @@
 import React from 'react'
-import { Form, Field, ErrorMessage } from 'formik'
+import { Form, ErrorMessage } from 'formik'
+import { FlexContainer, H1, P, Button } from '../../EmoTools'
+import { EmoField } from '../../EmoTools'
 
-const Login = ({ isSubmitting }) => (
-  <>
-    <h1>Login</h1>
+const Login = ({ isSubmitting, touched, errors }) => (
+  <FlexContainer fdc aic acc mainColor margin='20px 0'>
+    <H1>Login</H1>
     <Form>
-      <Field type='username' name='username' />
-      <ErrorMessage name='username' component='p' />
-      <Field type='password' name='password' />
-      <ErrorMessage name='password' component='p' />
-      <button type='submit' disabled={isSubmitting}>
-        Submit
-      </button>
+      <FlexContainer margin='50px 0 0' fdc aic mainColor>
+        {(touched.username && errors.username && (
+          <ErrorMessage name='username' component={P} />
+        )) || <P>Enter Username</P>}
+        <EmoField type='username' name='username' />
+        {(touched.password && errors.password && (
+          <ErrorMessage name='password' component={P} />
+        )) || <P>Enter Password</P>}
+        <EmoField type='password' name='password' />
+        <Button type='submit' disabled={isSubmitting}>
+          Submit
+        </Button>
+      </FlexContainer>
     </Form>
-  </>
+  </FlexContainer>
 )
 
 export default Login

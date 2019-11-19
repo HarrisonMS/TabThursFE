@@ -1,7 +1,7 @@
 import { withFormik } from 'formik'
 import * as Yup from 'yup'
 import Login from './Login'
-import axiosWithAuth from "../utils/axiosWithAuth";
+import loginPost from '../apis/loginPost'
 
 const FormikLogin = withFormik({
   mapPropsToValues: () => ({
@@ -11,24 +11,15 @@ const FormikLogin = withFormik({
   validationSchema: Yup.object().shape({
     username: Yup.string()
       .min(5, 'minimum 5 characters')
-      .required(`can't be empty`),
+      .required(`Username is required!`),
     password: Yup.string()
       .min(8, 'must be at least 8 characters')
-      .required(`can't be empty`),
+      .required(`Password is required!`),
   }),
   handleSubmit: (values, { setSubmitting, resetForm }) => {
-    axiosWithAuth()
-			.post('/auth/login', values)
-			.then((res) => {
-        console.log(res)
-				// localStorage.setItem('token', res.values.payload);
-			})
-			.catch((err) => console.log(err));
-    // setTimeout(() => {
-    //   alert(JSON.stringify(values, null, 2))
-    //   setSubmitting(false)
-    //   resetForm()
-    // }, 1000)
+    loginPost(values)
+    setSubmitting(false)
+    resetForm()
   },
   displayName: 'Sign In',
 })(Login)

@@ -17,6 +17,11 @@ debug@=3.1.0:
   dependencies:
     ms "2.0.0"
 
+emotion-reset@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/emotion-reset/-/emotion-reset-2.0.3.tgz#f242e9fdf9fe906703aa5d3251d356bc4557669d"
+  integrity sha512-QrVnyENYqlz6GvRsZRyuDZVv6nnJt+ZccpktDLj7nX38beB7q8fCESRLfWpw8KGHJVkqo+PIiQ0uVRTbedHTdg==
+
 follow-redirects@1.5.10:
   version "1.5.10"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
@@ -33,3 +38,8 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
+
+webfontloader@^1.6.28:
+  version "1.6.28"
+  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
+  integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
