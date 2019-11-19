@@ -16,8 +16,8 @@ const FormikLogin = withFormik({
       .min(8, 'must be at least 8 characters')
       .required(`Password is required!`),
   }),
-  handleSubmit: (values, { setSubmitting, resetForm }) => {
-    loginPost(values)
+  handleSubmit: (values, { props, setSubmitting, resetForm }) => {
+    loginPost(values,  () => props.history.push('/home'))
     setSubmitting(false)
     resetForm()
   },

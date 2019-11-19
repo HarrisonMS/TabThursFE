@@ -4,7 +4,6 @@ import { FlexContainer, H1, P, Button } from '../../EmoTools'
 import { EmoField } from '../../EmoTools'
 
 const SignUp = ({ isSubmitting, errors, touched }) => {
-  console.log(isSubmitting)
   return (
     <FlexContainer fdc aic acc mainColor margin='20px 0'>
       <H1>Sign Up</H1>

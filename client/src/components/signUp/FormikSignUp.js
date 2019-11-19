@@ -24,8 +24,7 @@ const FormikSignUp = withFormik({
       .oneOf([Yup.ref('password'), null], 'Passwords must match! Please try again.')
   }),
   handleSubmit: (values, { props, setSubmitting, resetForm }) => {
-    console.log(props)
-    signUpPost(values, () => props.history.push('/home'));
+    signUpPost(values, () => props.history.push('/home'))
     setSubmitting(false)
     resetForm()
   },
