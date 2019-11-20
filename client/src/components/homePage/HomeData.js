@@ -8,3 +8,6 @@ export const sortedTabs = dataArray =>
         catTabs: array,
       }
     })
+
+
+
