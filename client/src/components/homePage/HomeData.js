@@ -9,3 +9,6 @@ export const sortedTabs = dataArray =>
         tabName: tabNameArray,
       }
     })
+
+
+
