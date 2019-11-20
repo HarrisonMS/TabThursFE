@@ -2,6 +2,7 @@ import styled from '@emotion/styled/macro'
 import WebFont from 'webfontloader'
 import styledMap from 'styled-map'
 import { Field } from 'formik'
+import { Link } from 'react-router-dom'
 
 WebFont.load({
   google: {
@@ -86,6 +87,7 @@ export const FlexContainer = styled.div`
   padding: ${props => props.p};
   min-width: ${props => props.minWidth};
   max-width: ${props => props.maxWidth};
+  position: relative;
 `
 
 export const ImageW100 = styled.img`
@@ -109,6 +111,7 @@ export const H2 = styled.h2`
   font-weight: bold;
   text-align: ${props => props.textAlign};
   margin: ${props => props.m};
+  width: ${props => props.width};
 `
 export const H3 = styled.h3`
   font-size: ${styleVariables.fontSizeH3};
@@ -140,12 +143,15 @@ export const Button = styled.button`
   width: 40%;
   height: 40px;
   color: white;
-  background-color: mediumslateblue;
+  background-color: #3498db;
   border-radius: 15px;
   font-size: ${styleVariables.fontSizeSmall};
   margin: ${props => props.m};
   border: none;
   &:hover {
-    background-color: darkslateblue;
+    background-color: #2980b9;
   }
+`
+export const EmoLink = styled(Link)`
+  text-decoration: none;
 `

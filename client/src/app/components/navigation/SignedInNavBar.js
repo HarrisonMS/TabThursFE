@@ -1,6 +1,6 @@
 import React from 'react'
-import { EmoNavLink, SignOut, EmoLink } from './EmoNavigation'
-import { FlexContainer } from '../../emotionalThings/EmoTools'
+import { EmoNavLink, SignOut } from './EmoNavigation'
+import { FlexContainer, EmoLink } from '../../emotionalThings/EmoTools'
 
 const SignedInNavBar = () => {
   const handleClick = () => localStorage.removeItem('token')
@@ -22,6 +22,7 @@ const SignedInNavBar = () => {
             Save Tab
           </EmoNavLink>
           <EmoNavLink
+            exact
             activeStyle={{ fontWeight: 'bold', color: 'black' }}
             to='/home'
           >
