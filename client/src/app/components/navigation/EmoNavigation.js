@@ -1,6 +1,6 @@
 import styled from '@emotion/styled/macro'
 import { NavLink } from 'react-router-dom'
-import { styleVariables } from '../../EmoTools'
+import { styleVariables } from '../../emotionalThings/EmoTools'
 
 export const EmoNavLink = styled(NavLink)`
   color: darkgrey;

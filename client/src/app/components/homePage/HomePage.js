@@ -1,15 +1,17 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { UserTabsContext } from '../../UserTabsContext'
-import { FlexContainer, H1, H2, H3 } from '../../EmoTools'
+import { UserTabsContext } from '../../contexts/UserTabsContext'
+import { FlexContainer, H1, H2, H3 } from '../../emotionalThings/EmoTools'
 import { sortedTabs } from './HomeData'
-import { deleteTab } from '../apis/DeleteTabData'
+import { deleteTab } from '../../apis/DeleteTabData'
+import SignedInNavBar from '../navigation/SignedInNavBar'
 
 const HomePage = () => {
   const { userTabArray } = useContext(UserTabsContext)
   deleteTab(userTabArray.tabs[0])
   return (
     <>
+      <SignedInNavBar />
       <H1>All Saved Tabs</H1>
       {sortedTabs(userTabArray).map((tabObject, i) => (
         <FlexContainer key={i} mainColor fdc aic acc margin='20px'>

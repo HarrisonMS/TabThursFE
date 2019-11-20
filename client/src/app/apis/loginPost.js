@@ -5,8 +5,8 @@ const loginPost = (values, redirect) => {
     .post('/auth/login', values)
     .then(res => {
       localStorage.setItem('token', res.data.token)
+      redirect()
     })
     .catch(err => console.log(err))
-    .finally(redirect())
 }
 export default loginPost

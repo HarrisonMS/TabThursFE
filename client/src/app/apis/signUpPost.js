@@ -5,8 +5,8 @@ const signUpPost = (values, redirect) => {
     .post('/auth/register', values)
     .then(res => {
       localStorage.setItem('token', res.data.token)
+      redirect()
     })
     .catch(err => console.log(err))
-    .finally(redirect())
 }
 export default signUpPost

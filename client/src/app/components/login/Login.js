@@ -1,18 +1,16 @@
 import React from 'react'
 import { Form, ErrorMessage } from 'formik'
-import { FlexContainer, H1, P, Button } from '../../EmoTools'
-import { EmoField } from '../../EmoTools'
+import { FlexContainer, H1, P, Button } from '../../emotionalThings/EmoTools'
+import { EmoField } from '../../emotionalThings/EmoTools'
+import NavBar from '../navigation/NavBar'
 
-const SignUp = ({ isSubmitting, errors, touched }) => {
-  return (
+const Login = ({ isSubmitting, touched, errors }) => (
+  <>
+    <NavBar />
     <FlexContainer fdc aic acc mainColor margin='20px 0'>
-      <H1>Sign Up</H1>
+      <H1>Login</H1>
       <Form>
         <FlexContainer margin='50px 0 0' fdc aic mainColor>
-          {(touched.email && errors.email && (
-            <ErrorMessage name='email' component={P} />
-          )) || <P>Enter Email</P>}
-          <EmoField type='email' name='email' />
           {(touched.username && errors.username && (
             <ErrorMessage name='username' component={P} />
           )) || <P>Enter Username</P>}
@@ -21,17 +19,13 @@ const SignUp = ({ isSubmitting, errors, touched }) => {
             <ErrorMessage name='password' component={P} />
           )) || <P>Enter Password</P>}
           <EmoField type='password' name='password' />
-          {(touched.passwordConfirm && errors.passwordConfirm && (
-            <ErrorMessage name='passwordConfirm' component={P} />
-          )) || <P>Confirm Password</P>}
-          <EmoField type='password' name='passwordConfirm' />
           <Button type='submit' disabled={isSubmitting}>
             Submit
           </Button>
         </FlexContainer>
       </Form>
     </FlexContainer>
-  )
-}
+  </>
+)
 
-export default SignUp
+export default Login

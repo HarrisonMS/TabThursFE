@@ -1,7 +1,7 @@
 import { withFormik } from 'formik'
 import * as Yup from 'yup'
 import SignUp from './SignUp'
-import signUpPost from '../apis/signUpPost'
+import signUpPost from '../../apis/signUpPost'
 
 const FormikSignUp = withFormik({
   mapPropsToValues: () => ({
