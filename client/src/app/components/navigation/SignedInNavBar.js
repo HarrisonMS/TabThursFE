@@ -22,6 +22,7 @@ const SignedInNavBar = () => {
             Save Tab
           </EmoNavLink>
           <EmoNavLink
+            exact
             activeStyle={{ fontWeight: 'bold', color: 'black' }}
             to='/home'
           >
