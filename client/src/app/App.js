@@ -6,7 +6,7 @@ import FormikSignUp from './components/signUp/FormikSignUp'
 import FormikLogin from './components/login/FormikLogin'
 import HomePage from './components/homePage/HomePage'
 import TabCategory from './components/tabCategory/TabCategory'
-import PrivateRoute from './components/privateRoute/PrivateRoute'
+import PrivateRoute from './privateRoute/PrivateRoute'
 import FormikTabSave from './components/tabSave/FormikTabSave'
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       {
         id: 12,
         url: 'https://www.youtube.com',
-        name: 'YouTube',
+        name: 'YouTube is a Website That Exists',
         notes: 'My Favourite Video Site',
         user_id: 2,
         category_id: 1,

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Form, ErrorMessage } from 'formik'
-import { FlexContainer, H1, P, Button } from '../../emotionalThings/EmoTools'
+import { FlexContainer, H1, P } from '../../emotionalThings/EmoTools'
 import { EmoField } from '../../emotionalThings/EmoTools'
 import SignedInNavBar from '../navigation/SignedInNavBar'
+import { Save } from './EmoTabSave'
 
 const TabSave = ({ isSubmitting, errors, touched }) => {
   return (
@@ -24,9 +25,9 @@ const TabSave = ({ isSubmitting, errors, touched }) => {
             <EmoField type='text' name='note' />
             <P>Enter Category</P>
             <EmoField type='text' name='category' />
-            <Button type='submit' disabled={isSubmitting}>
-              Submit
-            </Button>
+            <Save m='10px' type='submit' disabled={isSubmitting}>
+              Save
+            </Save>
           </FlexContainer>
         </Form>
       </FlexContainer>

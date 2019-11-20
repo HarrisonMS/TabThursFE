@@ -2,6 +2,7 @@ import styled from '@emotion/styled/macro'
 import WebFont from 'webfontloader'
 import styledMap from 'styled-map'
 import { Field } from 'formik'
+import { Link } from 'react-router-dom'
 
 WebFont.load({
   google: {
@@ -140,12 +141,15 @@ export const Button = styled.button`
   width: 40%;
   height: 40px;
   color: white;
-  background-color: mediumslateblue;
+  background-color: #3498db;
   border-radius: 15px;
   font-size: ${styleVariables.fontSizeSmall};
   margin: ${props => props.m};
   border: none;
   &:hover {
-    background-color: darkslateblue;
+    background-color: #2980b9;
   }
+`
+export const EmoLink = styled(Link)`
+  text-decoration: none;
 `
