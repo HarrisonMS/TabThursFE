@@ -8,6 +8,9 @@ import FormikLogin from './components/login/FormikLogin'
 import HomePage from './components/homePage/HomePage'
 import TabCategory from './components/tabCategory/TabCategory'
 
+//adding Private route
+import PrivateRoute from "./components/privateRoute/PrivateRoute"
+
 function App() {
   const [userTabArray, setUserTabArray] = useState({
     tabs: [
@@ -47,8 +50,8 @@ function App() {
         <NavBar />
         <Route exact path='/' component={FormikSignUp} />
         <Route path='/login' component={FormikLogin} />
-        <Route exact path='/home' component={HomePage} />
-        <Route path='/home/:id' component={TabCategory} />
+        <PrivateRoute exact path='/home' component={HomePage} />
+        <PrivateRoute path='/home/:id' component={TabCategory} />
       </UserTabsContext.Provider>
     </>
   )
