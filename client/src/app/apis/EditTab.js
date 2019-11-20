@@ -1,7 +1,8 @@
+import axiosWithAuth from '../utils/axiosWithAuth'
 const saveEdit = e => {
   e.preventDefault();
   axiosWithAuth()
-    .put(`/tabs/${id}/'${colorToEdit.id}`, colorToEdit)
+    .put(`/tabs/${id}/'${id}`, cb)
     .then((res) => {
       // setEditing(false);
     })
