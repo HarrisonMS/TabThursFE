@@ -78,7 +78,7 @@ export const FlexContainer = styled.div`
   align-content: ${alignContentMap};
   flex-wrap: ${styledMap`fw: wrap;`};
   background-color: ${colorMap};
-  margin: ${props => props.margin};
+  margin: ${props => props.m};
   border-radius: ${props => props.br};
   box-shadow: ${props =>
     props.shadow === 'y' ? styleVariables.boxShadow : 'none'};
@@ -91,7 +91,7 @@ export const FlexContainer = styled.div`
 export const ImageW100 = styled.img`
   max-width: 100%;
   border-radius: ${props => props.round};
-  margin: ${props => props.margin};
+  margin: ${props => props.m};
 `
 
 export const H1 = styled.h1`
@@ -100,7 +100,7 @@ export const H1 = styled.h1`
   font-family: ${styleVariables.mainFontFamily};
   font-weight: bold;
   text-align: ${props => props.textAlign};
-  margin: ${props => props.margin};
+  margin: ${props => props.m};
 `
 export const H2 = styled.h2`
   font-size: ${styleVariables.fontSizeH2};
@@ -108,7 +108,7 @@ export const H2 = styled.h2`
   font-family: ${styleVariables.mainFontFamily};
   font-weight: bold;
   text-align: ${props => props.textAlign};
-  margin: ${props => props.margin};
+  margin: ${props => props.m};
 `
 export const H3 = styled.h3`
   font-size: ${styleVariables.fontSizeH3};
@@ -116,7 +116,7 @@ export const H3 = styled.h3`
   font-family: ${styleVariables.mainFontFamily};
   font-weight: bold;
   text-align: ${props => props.textAlign};
-  margin: ${props => props.margin};
+  margin: ${props => props.m};
 `
 
 export const P = styled.p`
@@ -124,7 +124,7 @@ export const P = styled.p`
   color: ${styleVariables.mainFontColor};
   font-family: ${styleVariables.mainFontFamily};
   text-align: ${props => props.textAlign};
-  margin: ${props => props.margin};
+  margin: ${props => props.m};
 `
 
 export const EmoField = styled(Field)`
@@ -134,7 +134,7 @@ export const EmoField = styled(Field)`
   font-size: ${styleVariables.fontSizeSmall};
   border-radius: 10px;
   border: lightslategrey 1px solid;
-  margin: ${props => props.margin};
+  margin: ${props => props.m};
 `
 export const Button = styled.button`
   width: 40%;
@@ -143,7 +143,7 @@ export const Button = styled.button`
   background-color: mediumslateblue;
   border-radius: 15px;
   font-size: ${styleVariables.fontSizeSmall};
-  margin: ${props => props.margin};
+  margin: ${props => props.m};
   border: none;
   &:hover {
     background-color: darkslateblue;

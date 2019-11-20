@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import { Route } from 'react-router-dom'
-import NavBar from './components/navigation/NavBar'
 import EmoGlobal from './emotionalThings/EmoGlobal'
 import { UserTabsContext } from './contexts/UserTabsContext'
 import FormikSignUp from './components/signUp/FormikSignUp'
 import FormikLogin from './components/login/FormikLogin'
 import HomePage from './components/homePage/HomePage'
 import TabCategory from './components/tabCategory/TabCategory'
-
-//adding Private route
 import PrivateRoute from './components/privateRoute/PrivateRoute'
+import FormikTabSave from './components/tabSave/FormikTabSave'
 
 function App() {
   const [userTabArray, setUserTabArray] = useState({
@@ -32,6 +30,7 @@ function App() {
         <Route exact path='/' component={FormikSignUp} />
         <Route path='/login' component={FormikLogin} />
         <PrivateRoute exact path='/home' component={HomePage} />
+        <PrivateRoute path='/save' component={FormikTabSave} />
         <PrivateRoute path='/home/:id' component={TabCategory} />
       </UserTabsContext.Provider>
     </>

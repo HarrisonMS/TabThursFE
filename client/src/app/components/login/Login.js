@@ -7,7 +7,7 @@ import NavBar from '../navigation/NavBar'
 const Login = ({ isSubmitting, touched, errors }) => (
   <>
     <NavBar />
-    <FlexContainer fdc aic acc mainColor margin='20px 0'>
+    <FlexContainer fdc aic acc mainColor m='20px 0'>
       <H1>Login</H1>
       <Form>
         <FlexContainer margin='50px 0 0' fdc aic mainColor>

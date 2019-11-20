@@ -8,7 +8,7 @@ const SignUp = ({ isSubmitting, errors, touched }) => {
   return (
     <>
       <NavBar />
-      <FlexContainer fdc aic acc mainColor margin='20px 0'>
+      <FlexContainer fdc aic acc mainColor m='20px 0'>
         <H1>Sign Up</H1>
         <Form>
           <FlexContainer margin='50px 0 0' fdc aic mainColor>

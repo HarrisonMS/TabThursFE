@@ -12,16 +12,20 @@ const TabCategory = props => {
   return (
     <>
       <SignedInNavBar />
-      <H1>{props.match.params.id}</H1>
-      {categoryTabs.map((tab, i) => (
-        <FlexContainer key={i} margin='20px auto' maxWidth='498px'>
-          <FlexContainer fdc>
-            <H2 margin='20px 10px 10px'>{tab.name}</H2>
-            <P margin='10px'>{tab.notes}</P>
+      <FlexContainer fdc aic acc mainColor m='20px 0' p='10px'>
+        <H1>{props.match.params.id}</H1>
+        {categoryTabs.map((tab, i) => (
+          <FlexContainer key={i} m='20px auto' p='20px' br='2px' maxWidth='550px' shadow='y'>
+            <FlexContainer fdc maxWidth='85vw'>
+              <H2 m='0 2vw 10px'>{tab.name}</H2>
+              <P m='10px 2vw'>{tab.notes}</P>
+            </FlexContainer>
+            <FlexContainer maxWidth='85vw' m='auto'>
+            <MicroLinkPreviews address={tab.url} />
+            </FlexContainer>
           </FlexContainer>
-          <MicroLinkPreviews address={tab.url} />
-        </FlexContainer>
-      ))}
+        ))}
+      </FlexContainer>
     </>
   )
 }
