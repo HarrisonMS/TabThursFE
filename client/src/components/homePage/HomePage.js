@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import { UserTabsContext } from '../../UserTabsContext'
 import { FlexContainer, H1, H2, H3 } from '../../EmoTools'
 import { sortedTabs } from './HomeData'
+import { deleteTab } from '../apis/DeleteTabData'
 
 const HomePage = () => {
   const { userTabArray } = useContext(UserTabsContext)
-  console.log(userTabArray)
-  console.log(sortedTabs(userTabArray))
+  deleteTab(userTabArray.tabs[0])
   return (
     <>
       <H1>All Saved Tabs</H1>

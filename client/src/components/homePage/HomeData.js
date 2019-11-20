@@ -3,11 +3,5 @@ export const sortedTabs = dataArray =>
     .map(catID => dataArray.tabs.filter(tab => catID === tab.category_id))
     .map(array => {
       const categoryName = array[0].category
-      return {
-        catName: categoryName,
-        catTabs: array,
-      }
+      return { catName: categoryName, catTabs: array }
     })
-
-
-

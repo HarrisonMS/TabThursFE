@@ -11,8 +11,8 @@ const TabCategory = props => {
   return (
     <>
       <H1>{props.match.params.id}</H1>
-      {categoryTabs.map(tab => (
-        <FlexContainer margin='20px auto' width='498px'>
+      {categoryTabs.map((tab, i) => (
+        <FlexContainer key={i} margin='20px auto' width='498px'>
           <FlexContainer fdc>
             <H2 margin='20px 10px 10px'>{tab.name}</H2>
             <P margin='10px'>{tab.notes}</P>
