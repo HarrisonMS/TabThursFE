@@ -27,3 +27,9 @@ export const Edit = styled.button`
     background-color: #2980b9;
   }
 `
+
+export const ButtonHolder = styled.div`
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+`

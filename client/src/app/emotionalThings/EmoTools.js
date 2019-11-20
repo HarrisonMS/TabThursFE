@@ -87,6 +87,7 @@ export const FlexContainer = styled.div`
   padding: ${props => props.p};
   min-width: ${props => props.minWidth};
   max-width: ${props => props.maxWidth};
+  position: relative;
 `
 
 export const ImageW100 = styled.img`
@@ -110,6 +111,7 @@ export const H2 = styled.h2`
   font-weight: bold;
   text-align: ${props => props.textAlign};
   margin: ${props => props.m};
+  width: ${props => props.width};
 `
 export const H3 = styled.h3`
   font-size: ${styleVariables.fontSizeH3};
