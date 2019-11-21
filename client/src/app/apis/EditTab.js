@@ -4,7 +4,7 @@ const saveEdit = e => {
   axiosWithAuth()
     .put(`/tabs/${id}/'${id}`, cb)
     .then((res) => {
-      // setEditing(false);
+      redirect(home)
     })
     .catch((err) => console.log(err));
 };

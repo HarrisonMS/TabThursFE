@@ -1,13 +1,10 @@
-import axiosWithAuth from "../utils/axiosWithAuth";
+import axiosWithAuth from '../utils/axiosWithAuth'
 
-export const deleteTab = tab => {
-  console.log(tab);
+export const deleteTab = deleteId => {
+  const id = localStorage.getItem('id')
   axiosWithAuth()
-    .delete(`/tabs/${id}/${tab.id}`)
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => console.log(err));
-  }
-
-  
+    .delete(`/tabs/${id}/${deleteId}`)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+  return true
+}

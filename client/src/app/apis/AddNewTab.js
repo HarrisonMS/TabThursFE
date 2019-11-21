@@ -1,11 +1,9 @@
-import axiosWithAuth from "../utils/axiosWithAuth";
+import axiosWithAuth from '../utils/axiosWithAuth'
 
-const AddNewTab = e => {
-  e.preventDefault();
+export const addNewTab = tab => {
+  const id = localStorage.getItem('id')
   axiosWithAuth()
-    .put(`/api/tabs/${id}`, ToEdit)
-    .then((res) => {
-      // setEditing(false);
-    })
-    .catch((err) => console.log(err));
-};
+  .post(`/tabs/${id}/`, tab)
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
+}

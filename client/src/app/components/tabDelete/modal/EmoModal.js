@@ -1,6 +1,17 @@
 import styled from '@emotion/styled/macro'
-import { styleVariables } from '../../emotionalThings/EmoTools'
-import Modal from '../tabDelete/modal/Modal'
+import { styleVariables } from '../../../emotionalThings/EmoTools'
+
+export const EmoModalDiv = styled.div`
+  position: fixed;
+  top: calc(40% - 100px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: ${styleVariables.boxShadow};
+`
 
 export const Delete = styled.button`
   height: 40px;
@@ -15,25 +26,16 @@ export const Delete = styled.button`
     background-color: #c0392b;
   }
 `
-export const Edit = styled.button`
+export const Cancel = styled.button`
   height: 40px;
   color: white;
-  background-color: #3498db;
+  background-color: #34495e;
   border-radius: 15px;
   font-size: ${styleVariables.fontSizeSmall};
   margin: ${props => props.m};
   padding: 0 10px;
   border: none;
   &:hover {
-    background-color: #2980b9;
+    background-color: #2c3e50;
   }
-`
-
-export const ButtonHolder = styled.div`
-  margin-right: 20px;
-  position: absolute;
-  right: 0;
-`
-export const Hack = styled.p`
-  display: none;
 `

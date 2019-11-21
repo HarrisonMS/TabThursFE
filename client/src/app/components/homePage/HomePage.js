@@ -1,13 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { UserTabsContext } from '../../contexts/UserTabsContext'
 import { FlexContainer, H1, H2, H3 } from '../../emotionalThings/EmoTools'
 import { sortedTabs } from './HomeData'
 import SignedInNavBar from '../navigation/SignedInNavBar'
+import { GetTabArray } from '../../apis/GetTabArray'
 
 const HomePage = () => {
-  const { userTabArray } = useContext(UserTabsContext)
-  console.log(userTabArray)
+  const { userTabArray, setUserTabArray } = useContext(UserTabsContext)
+  const newTabArray = GetTabArray()
+  useEffect(() => setUserTabArray(newTabArray), [newTabArray])
+
   return (
     <>
       <SignedInNavBar />

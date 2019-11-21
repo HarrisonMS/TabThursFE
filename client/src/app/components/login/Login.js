@@ -3,8 +3,14 @@ import { Form, ErrorMessage } from 'formik'
 import { FlexContainer, H1, P, Button } from '../../emotionalThings/EmoTools'
 import { EmoField } from '../../emotionalThings/EmoTools'
 import NavBar from '../navigation/NavBar'
+import { useContext } from 'react'
+import { UserTabsContext } from '../../contexts/UserTabsContext'
 
-const Login = ({ isSubmitting, touched, errors }) => (
+
+
+const Login = ({ isSubmitting, touched, errors }) => {
+  const { setUserTabArray } = useContext(UserTabsContext)
+  return (
   <>
     <NavBar />
     <FlexContainer fdc aic acc mainColor m='20px 0'>
@@ -19,7 +25,7 @@ const Login = ({ isSubmitting, touched, errors }) => (
             <ErrorMessage name='password' component={P} />
           )) || <P>Enter Password</P>}
           <EmoField type='password' name='password' />
-          <Button type='submit' disabled={isSubmitting}>
+          <Button setUserTabArray={setUserTabArray} type='submit' disabled={isSubmitting}>
             Submit
           </Button>
         </FlexContainer>
@@ -27,5 +33,5 @@ const Login = ({ isSubmitting, touched, errors }) => (
     </FlexContainer>
   </>
 )
-
+          }
 export default Login

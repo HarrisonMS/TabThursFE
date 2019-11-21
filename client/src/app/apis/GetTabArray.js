@@ -1,18 +1,14 @@
-export const GetTabArray = () => {
-  useEffect(() => {
-    axiosWithAuth().get("/")
-    .then((res) => userTabsArray(res.data))
-    .catch((err) => console.log(err.res));
-  },[])}
-
-
+import { useEffect, useState } from 'react'
 import axiosWithAuth from '../utils/axiosWithAuth'
-  const GetTabArray = () => {
-    // const [userTabArray, setUserTabArray] = useState
-    useEffect(() => {
-      axiosWithAuth()
-        .get("/")
-        .then((res) => setUserTabArray(res.data))
-        .catch((err) => console.log(err.res));
-    }, [])}
-    
+
+export const GetTabArray = () => {
+  const id = localStorage.getItem('id')
+  const [newTabsArray, setNewTabsArray] = useState({tabs: []})
+  useEffect(() => {
+    axiosWithAuth()
+      .get(`/tabs/${id}`)
+      .then(res => setNewTabsArray(res.data))
+      .catch(err => console.log(err.res))
+  }, [])
+  return newTabsArray
+}

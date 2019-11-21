@@ -3,13 +3,13 @@ import { H1, FlexContainer, H2, P } from '../../emotionalThings/EmoTools'
 import { UserTabsContext } from '../../contexts/UserTabsContext'
 import MicroLinkPreviews from './MicroLinkPreviews'
 import SignedInNavBar from '../navigation/SignedInNavBar'
-import { Delete, Edit, ButtonHolder } from './EmoTabCategory'
-import Modal from '../modal/Modal'
-import useModal from '../modal/useModal'
+import { Delete, Edit, ButtonHolder, Hack } from './EmoTabCategory'
+import Modal from '../tabDelete/modal/Modal'
+import useModal from '../tabDelete/modal/useModal'
 
 const TabCategory = props => {
   const { userTabArray } = useContext(UserTabsContext)
-  const { visible, showHideModal } = useModal()
+  const { visible, showHideModal, deleteId } = useModal()
   const categoryTabs = userTabArray.tabs.filter(
     tab => tab.category === props.match.params.id
   )
@@ -18,6 +18,7 @@ const TabCategory = props => {
       <SignedInNavBar />
       <FlexContainer fdc aic acc mainColor m='20px 0' p='10px'>
         <H1>{props.match.params.id}</H1>
+        <Modal deleteId={deleteId} visible={visible} close={showHideModal} />
         {categoryTabs.map((tab, i) => (
           <FlexContainer
             key={i}
@@ -34,10 +35,9 @@ const TabCategory = props => {
               <P m='10px 10px'>{tab.notes}</P>
             </FlexContainer>
             <ButtonHolder>
-              <Delete m='0 10px 0 0' onClick={showHideModal}>
+              <Delete m='0 10px 0 0' value={tab.id} onClick={showHideModal}>
                 Delete
               </Delete>
-              <Modal visible={visible} close={showHideModal} />
               <Edit>Edit</Edit>
             </ButtonHolder>
             <FlexContainer maxWidth='85vw' m='auto'>
@@ -46,6 +46,7 @@ const TabCategory = props => {
           </FlexContainer>
         ))}
       </FlexContainer>
+      <Hack>{deleteId}</Hack>
     </>
   )
 }
