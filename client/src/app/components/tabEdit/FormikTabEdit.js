@@ -1,13 +1,14 @@
 import { withFormik } from 'formik'
 import * as Yup from 'yup'
-import TabSave from './TabSave'
-import { addNewTab } from '../../apis/AddNewTab'
+import { editTab } from '../../apis/EditTab'
+import TabEdit from './TabEdit'
 
-const FormikTabSave = withFormik({
-  mapPropsToValues: () => ({
-    name: '',
-    url: '',
-    notes: '',
+const FormikTabEdit = withFormik({
+  mapPropsToValues: (props) => ({
+    name: props.tab.name,
+    url: props.tab.url,
+    notes: props.tab.notes,
+    id: props.tab.id,
     // category: '',
   }),
   validationSchema: Yup.object().shape({
@@ -16,11 +17,11 @@ const FormikTabSave = withFormik({
   }),
   handleSubmit: (values, { props, setSubmitting, resetForm }) => {
     // values.category === '' && (values.category = 'School')
-    addNewTab(values)
+    editTab(values, () => props.history.push('/home'))
     setSubmitting(false)
     resetForm()
   },
-  displayName: 'Save New Tab',
-})(TabSave)
+  displayName: 'Edit Tab',
+})(TabEdit)
 
-export default FormikTabSave
+export default FormikTabEdit

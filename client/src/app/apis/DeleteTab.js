@@ -6,5 +6,4 @@ export const deleteTab = deleteId => {
     .delete(`/tabs/${id}/${deleteId}`)
     .then(res => console.log(res))
     .catch(err => console.log(err))
-  return true
 }

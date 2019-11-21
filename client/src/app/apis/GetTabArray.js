@@ -9,6 +9,6 @@ export const GetTabArray = () => {
       .get(`/tabs/${id}`)
       .then(res => setNewTabsArray(res.data))
       .catch(err => console.log(err.res))
-  }, [])
+  }, [id])
   return newTabsArray
 }

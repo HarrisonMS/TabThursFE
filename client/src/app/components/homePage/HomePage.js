@@ -9,7 +9,7 @@ import { GetTabArray } from '../../apis/GetTabArray'
 const HomePage = () => {
   const { userTabArray, setUserTabArray } = useContext(UserTabsContext)
   const newTabArray = GetTabArray()
-  useEffect(() => setUserTabArray(newTabArray), [newTabArray])
+  useEffect(() => setUserTabArray(newTabArray), [newTabArray, setUserTabArray])
 
   return (
     <>

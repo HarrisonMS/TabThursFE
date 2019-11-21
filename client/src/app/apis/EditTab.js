@@ -1,9 +1,12 @@
-const saveEdit = e => {
-  e.preventDefault();
+import axiosWithAuth from '../utils/axiosWithAuth'
+
+export const editTab = (tab, redirect) => {
+  const id = localStorage.getItem('id')
   axiosWithAuth()
-    .put(`/tabs/${id}/'${colorToEdit.id}`, colorToEdit)
-    .then((res) => {
-      // setEditing(false);
+    .put(`/tabs/${id}/${tab.id}`, tab)
+    .then(res => {
+      console.log(res)
+      redirect()
     })
-    .catch((err) => console.log(err));
-};
+    .catch(err => console.log(err))
+}
