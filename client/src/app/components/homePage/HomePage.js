@@ -7,6 +7,7 @@ import SignedInNavBar from '../navigation/SignedInNavBar'
 
 const HomePage = () => {
   const { userTabArray } = useContext(UserTabsContext)
+  console.log(userTabArray)
   return (
     <>
       <SignedInNavBar />

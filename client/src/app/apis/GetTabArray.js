@@ -8,7 +8,7 @@ export const GetTabArray = () => {
 
 import axiosWithAuth from '../utils/axiosWithAuth'
   const GetTabArray = () => {
-    const [userTabArray, setUserTabArray] = useState
+    // const [userTabArray, setUserTabArray] = useState
     useEffect(() => {
       axiosWithAuth()
         .get("/")
