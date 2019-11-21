@@ -1,5 +1,5 @@
 import axiosWithAuth from '../utils/axiosWithAuth'
-const saveEdit = e => {
+export const saveEdit = e => {
   e.preventDefault();
   axiosWithAuth()
     .put(`/tabs/${id}/'${id}`, cb)
