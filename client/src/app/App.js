@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import EmoGlobal from './emotionalThings/EmoGlobal'
 import { UserTabsContext } from './contexts/UserTabsContext'
@@ -9,21 +9,10 @@ import TabCategory from './components/tabCategory/TabCategory'
 import PrivateRoute from './privateRoute/PrivateRoute'
 import FormikTabSave from './components/tabSave/FormikTabSave'
 
+
 function App() {
-  const [userTabArray, setUserTabArray] = useState({
-    tabs: [
-      {
-        id: 12,
-        url: 'https://www.youtube.com',
-        name: 'YouTube',
-        notes: 'My Favourite Video Site',
-        user_id: 2,
-        category_id: 1,
-        category: 'Entertainment',
-      },
-      
-    ],
-  })
+  const [userTabArray, setUserTabArray] = useState({"tabs": []})
+ 
   return (
     <>
       <EmoGlobal />

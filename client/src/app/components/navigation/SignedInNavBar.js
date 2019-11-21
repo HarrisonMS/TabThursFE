@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { EmoNavLink, SignOut } from './EmoNavigation'
 import { FlexContainer, EmoLink } from '../../emotionalThings/EmoTools'
+import { UserTabsContext } from '../../contexts/UserTabsContext'
 
 const SignedInNavBar = () => {
-  const handleClick = () => localStorage.removeItem('token')
+  const { setUserTabArray } = useContext(UserTabsContext)
+  const handleClick = () => {
+    setUserTabArray({"tabs": []})
+    localStorage.removeItem('token')
+    localStorage.removeItem('id')
+
+  }
   return (
     <nav>
       <FlexContainer>

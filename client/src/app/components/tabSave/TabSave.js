@@ -13,18 +13,18 @@ const TabSave = ({ isSubmitting, errors, touched }) => {
         <H1>Save New Tab </H1>
         <Form>
           <FlexContainer m='50px 0 0' fdc aic mainColor>
-            {(touched.tabName && errors.tabName && (
-              <ErrorMessage name='tabName' component={P} />
+            {(touched.name && errors.name && (
+              <ErrorMessage name='name' component={P} />
             )) || <P>Enter Tab Name</P>}
-            <EmoField type='text' name='tabName' />
+            <EmoField type='text' name='name' />
             {(touched.url && errors.url && (
               <ErrorMessage name='url' component={P} />
             )) || <P>Enter Tab Address</P>}
             <EmoField type='text' name='url' />
             <P>Enter Note</P>
-            <EmoField type='text' name='note' />
-            <P>Enter Category</P>
-            <EmoField type='text' name='category' />
+            <EmoField type='text' name='notes' />
+            {/* <P>Enter Category</P>
+            <EmoField type='text' name='category' /> */}
             <Save m='10px' type='submit' disabled={isSubmitting}>
               Save
             </Save>

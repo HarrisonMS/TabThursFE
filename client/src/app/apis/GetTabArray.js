@@ -1,8 +1,14 @@
-const BubblePage = () => {
+import { useEffect, useState } from 'react'
+import axiosWithAuth from '../utils/axiosWithAuth'
+
+export const GetTabArray = () => {
+  const id = localStorage.getItem('id')
+  const [newTabsArray, setNewTabsArray] = useState({tabs: []})
   useEffect(() => {
-    axiosWithAuth().get("/")
-    .then((res) => userTabsArray(res.data))
-    .catch((err) => console.log(err.res));
-  },[])}
-
-
+    axiosWithAuth()
+      .get(`/tabs/${id}`)
+      .then(res => setNewTabsArray(res.data))
+      .catch(err => console.log(err.res))
+  }, [])
+  return newTabsArray
+}
