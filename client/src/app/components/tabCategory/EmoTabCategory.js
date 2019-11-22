@@ -1,6 +1,5 @@
 import styled from '@emotion/styled/macro'
 import { styleVariables } from '../../emotionalThings/EmoTools'
-import Modal from '../tabDelete/modal/Modal'
 
 export const Delete = styled.button`
   height: 40px;

@@ -1,10 +1,9 @@
 import axiosWithAuth from '../utils/axiosWithAuth'
-export const saveEdit = e => {
-  e.preventDefault();
+
+export const editTab = (tab, redirect) => {
+  const id = localStorage.getItem('id')
   axiosWithAuth()
-    .put(`/tabs/${id}/'${id}`, cb)
-    .then((res) => {
-      redirect(home)
-    })
-    .catch((err) => console.log(err));
-};
+    .put(`/tabs/${id}/${tab.id}`, tab)
+    .then(() => redirect())
+    .catch(() => alert('Something went wrong, please try again!'))
+}

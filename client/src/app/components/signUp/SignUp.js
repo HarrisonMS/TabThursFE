@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, ErrorMessage } from 'formik'
-import { FlexContainer, H1, P, Button } from '../../emotionalThings/EmoTools'
+import { FlexContainer, P, Button, H2 } from '../../emotionalThings/EmoTools'
 import { EmoField } from '../../emotionalThings/EmoTools'
 import NavBar from '../navigation/NavBar'
 
@@ -9,7 +9,7 @@ const SignUp = ({ isSubmitting, errors, touched }) => {
     <>
       <NavBar />
       <FlexContainer fdc aic acc mainColor m='20px 0'>
-        <H1>Sign Up</H1>
+        <H2 m='15px'>Sign Up</H2>
         <Form>
           <FlexContainer margin='50px 0 0' fdc aic mainColor>
             {(touched.email && errors.email && (

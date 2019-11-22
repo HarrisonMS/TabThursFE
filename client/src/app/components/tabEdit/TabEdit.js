@@ -3,14 +3,14 @@ import { Form, ErrorMessage } from 'formik'
 import { FlexContainer, H1, P } from '../../emotionalThings/EmoTools'
 import { EmoField } from '../../emotionalThings/EmoTools'
 import SignedInNavBar from '../navigation/SignedInNavBar'
-import { Save } from './EmoTabSave'
+import { Save } from './EmoTabEdit'
 
-const TabSave = ({ isSubmitting, errors, touched }) => {
+const TabEdit = ({ isSubmitting, errors, touched }) => {
   return (
     <>
       <SignedInNavBar />
       <FlexContainer fdc aic acc mainColor m='20px 0'>
-        <H1>Save New Tab </H1>
+        <H1>Edit Tab</H1>
         <Form>
           <FlexContainer m='50px 0 0' fdc aic mainColor>
             {(touched.name && errors.name && (
@@ -33,4 +33,4 @@ const TabSave = ({ isSubmitting, errors, touched }) => {
   )
 }
 
-export default TabSave
+export default TabEdit

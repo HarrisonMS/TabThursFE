@@ -8,6 +8,10 @@ const loginPost = (values, redirect) => {
       localStorage.setItem('id', res.data.id)
       redirect()
     })
-    .catch(err => console.log(err))
+    .catch(() =>
+      alert(
+        'Please check your username and password or click the sign up button to create a new account.'
+      )
+    )
 }
 export default loginPost

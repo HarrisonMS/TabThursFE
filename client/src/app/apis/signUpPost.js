@@ -8,6 +8,10 @@ const signUpPost = (values, redirect) => {
       localStorage.setItem('id', res.data.id)
       redirect()
     })
-    .catch(err => console.log(err))
+    .catch(() =>
+      alert(
+        'Please check the information and try again, or log in to an existing account.'
+      )
+    )
 }
 export default signUpPost
