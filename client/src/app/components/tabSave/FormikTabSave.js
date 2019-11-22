@@ -16,7 +16,6 @@ const FormikTabSave = withFormik({
   handleSubmit: (values, { props, setSubmitting, resetForm }) => {
     addNewTab(values, () => props.history.push('/home'))
     setSubmitting(false)
-    resetForm()
   },
   displayName: 'Save New Tab',
 })(TabSave)
