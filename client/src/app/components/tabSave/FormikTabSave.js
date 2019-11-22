@@ -8,15 +8,13 @@ const FormikTabSave = withFormik({
     name: '',
     url: '',
     notes: '',
-    // category: '',
   }),
   validationSchema: Yup.object().shape({
     name: Yup.string().required('Please give your tab a name!'),
     url: Yup.string().required('Please Enter A URL!'),
   }),
   handleSubmit: (values, { props, setSubmitting, resetForm }) => {
-    // values.category === '' && (values.category = 'School')
-    addNewTab(values)
+    addNewTab(values, () => props.history.push('/home'))
     setSubmitting(false)
     resetForm()
   },

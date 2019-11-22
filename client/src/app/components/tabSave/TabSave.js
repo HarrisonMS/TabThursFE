@@ -23,8 +23,6 @@ const TabSave = ({ isSubmitting, errors, touched }) => {
             <EmoField type='text' name='url' />
             <P>Enter Note</P>
             <EmoField type='text' name='notes' />
-            {/* <P>Enter Category</P>
-            <EmoField type='text' name='category' /> */}
             <Save m='10px' type='submit' disabled={isSubmitting}>
               Save
             </Save>

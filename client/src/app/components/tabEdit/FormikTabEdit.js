@@ -9,7 +9,6 @@ const FormikTabEdit = withFormik({
     url: props.tab.url,
     notes: props.tab.notes,
     id: props.tab.id,
-    // category: '',
   }),
   validationSchema: Yup.object().shape({
     name: Yup.string().required('Please give your tab a name!'),
