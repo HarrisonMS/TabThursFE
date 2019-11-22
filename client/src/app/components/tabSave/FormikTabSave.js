@@ -18,7 +18,6 @@ const FormikTabSave = withFormik({
     // values.category === '' && (values.category = 'School')
     addNewTab(values)
     setSubmitting(false)
-    resetForm()
   },
   displayName: 'Save New Tab',
 })(TabSave)
