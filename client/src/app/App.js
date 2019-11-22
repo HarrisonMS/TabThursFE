@@ -12,7 +12,6 @@ import FormikTabSave from './components/tabSave/FormikTabSave'
 import FormikTabEdit from './components/tabEdit/FormikTabEdit'
 import EditPrivateRoute from './privateRoute/EditPrivateRoute'
 
-
 function App() {
   const [userTabArray, setUserTabArray] = useState({ tabs: [] })
   const [tab, setTab] = useState({})

@@ -3,7 +3,7 @@ import axiosWithAuth from '../utils/axiosWithAuth'
 
 export const GetTabArray = () => {
   const id = localStorage.getItem('id')
-  const [newTabsArray, setNewTabsArray] = useState({tabs: []})
+  const [newTabsArray, setNewTabsArray] = useState({ tabs: [] })
   useEffect(() => {
     axiosWithAuth()
       .get(`/tabs/${id}`)

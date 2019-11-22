@@ -1,9 +1,16 @@
 import React from 'react'
 import { EmoNavLink } from './EmoNavigation'
-import { FlexContainer } from '../../emotionalThings/EmoTools'
+import {
+  FlexContainer,
+  EmoTitle,
+  TitleBackground,
+} from '../../emotionalThings/EmoTools'
 
 const NavBar = () => (
   <nav>
+    <TitleBackground>
+      <EmoTitle>Tabless</EmoTitle>
+    </TitleBackground>
     <FlexContainer width='100%' jcfe>
       <EmoNavLink
         exact

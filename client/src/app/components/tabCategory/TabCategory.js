@@ -1,5 +1,11 @@
 import React, { useContext } from 'react'
-import { H1, FlexContainer, H2, P, EmoLink } from '../../emotionalThings/EmoTools'
+import {
+  H1,
+  FlexContainer,
+  H2,
+  P,
+  EmoLink,
+} from '../../emotionalThings/EmoTools'
 import { UserTabsContext } from '../../contexts/UserTabsContext'
 import MicroLinkPreviews from './MicroLinkPreviews'
 import SignedInNavBar from '../navigation/SignedInNavBar'
@@ -7,7 +13,6 @@ import { Delete, Edit, ButtonHolder, Hack } from './EmoTabCategory'
 import Modal from '../tabDelete/modal/Modal'
 import useModal from '../tabDelete/modal/useModal'
 import { EditTabContext } from '../../contexts/EditTabContext'
-
 
 const TabCategory = props => {
   const { userTabArray } = useContext(UserTabsContext)
@@ -41,7 +46,9 @@ const TabCategory = props => {
               <Delete m='0 10px 0 0' value={tab.id} onClick={showHideModal}>
                 Delete
               </Delete>
-              <EmoLink to='/edit'><Edit onClick={e => setTab(tab)}>Edit</Edit></EmoLink>
+              <EmoLink to='/edit'>
+                <Edit onClick={e => setTab(tab)}>Edit</Edit>
+              </EmoLink>
             </ButtonHolder>
             <FlexContainer maxWidth='85vw' m='auto'>
               <MicroLinkPreviews address={tab.url} />

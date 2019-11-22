@@ -4,7 +4,7 @@ import { editTab } from '../../apis/EditTab'
 import TabEdit from './TabEdit'
 
 const FormikTabEdit = withFormik({
-  mapPropsToValues: (props) => ({
+  mapPropsToValues: props => ({
     name: props.tab.name,
     url: props.tab.url,
     notes: props.tab.notes,

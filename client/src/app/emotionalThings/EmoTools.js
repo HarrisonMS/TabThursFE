@@ -1,12 +1,14 @@
 import styled from '@emotion/styled/macro'
+import { keyframes } from '@emotion/core'
 import WebFont from 'webfontloader'
 import styledMap from 'styled-map'
 import { Field } from 'formik'
 import { Link } from 'react-router-dom'
+import { slideInLeft } from 'react-animations'
 
 WebFont.load({
   google: {
-    families: ['Oxygen', 'Varela Round', 'sans-serif'],
+    families: ['Oxygen', 'Varela Round', 'Righteous', 'sans-serif'],
   },
 })
 
@@ -154,4 +156,16 @@ export const Button = styled.button`
 `
 export const EmoLink = styled(Link)`
   text-decoration: none;
+`
+const slideAnimation = keyframes`${slideInLeft}`
+
+export const EmoTitle = styled(H1)`
+  font-family: 'Righteous';
+  color: rgb(91, 56, 170);
+  background-color: #313639;
+  padding: 5px;
+  animation: 1s ${slideAnimation};
+`
+export const TitleBackground = styled.div`
+  background-color: #313639;
 `

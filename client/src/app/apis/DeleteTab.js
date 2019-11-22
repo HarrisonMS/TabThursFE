@@ -4,6 +4,5 @@ export const deleteTab = deleteId => {
   const id = localStorage.getItem('id')
   axiosWithAuth()
     .delete(`/tabs/${id}/${deleteId}`)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+    .catch(() => alert('Something went wrong, please try again!'))
 }
